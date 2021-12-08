@@ -32,39 +32,39 @@ const createTypeScriptConfiguration = async (framework: string) => {
   const targetFrameworkConfigBuffer: Buffer = await fse.readFile(
     frameworksConfigFiles[framework as keyof Frameworks]
   )
-  let targetFrameworkConfig: string = targetFrameworkConfigBuffer.toString()
-  // path of the tsconfig in your project
   const tsconfig: string = path.join(process.cwd(), 'tsconfig.json')
+  // let targetFrameworkConfig: string = targetFrameworkConfigBuffer.toString()
+  // path of the tsconfig in your project
 
-  if (framework === 'node') {
-    const version = parseInt(process.versions.node.split('.')[0], 10)
+  // if (framework === 'node') {
+  //   const version = parseInt(process.versions.node.split('.')[0], 10)
 
-    if (version >= 14) {
-      // Optimal config for Node v14.0.0 (full ES2020)
-      const updateConfig = {
-        allowSyntheticDefaultImports: true,
-        lib: ['es2020'],
-        module: 'es2020',
-        moduleResolution: 'node',
-        target: 'es2020'
-      }
+  //   if (version >= 14) {
+  //     // Optimal config for Node v14.0.0 (full ES2020)
+  //     const updateConfig = {
+  //       allowSyntheticDefaultImports: true,
+  //       lib: ['es2020'],
+  //       module: 'es2020',
+  //       moduleResolution: 'node',
+  //       target: 'es2020'
+  //     }
 
-      const configObj = Object.keys(updateConfig).reduce(
-        (prev, curr) => ({
-          ...prev,
-          compilerOptions: {
-            ...prev.compilerOptions,
-            [curr]: updateConfig[curr as keyof UpdateConfigInterface]
-          }
-        }),
-        JSON.parse(targetFrameworkConfig.toString())
-      )
+  //     const configObj = Object.keys(updateConfig).reduce(
+  //       (prev, curr) => ({
+  //         ...prev,
+  //         compilerOptions: {
+  //           ...prev.compilerOptions,
+  //           [curr]: updateConfig[curr as keyof UpdateConfigInterface]
+  //         }
+  //       }),
+  //       JSON.parse(targetFrameworkConfig.toString())
+  //     )
 
-      targetFrameworkConfig = JSON.stringify(configObj, null, 2)
-    }
-  }
+  //     targetFrameworkConfig = JSON.stringify(configObj, null, 2)
+  //   }
+  // }
 
-  await fse.writeFile(tsconfig, targetFrameworkConfig)
+  await fse.writeFile(tsconfig, targetFrameworkConfigBuffer.toString())
 
   console.log(
     blue(

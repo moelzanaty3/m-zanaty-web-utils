@@ -41,7 +41,7 @@ const createJasmineConfiguration = async (): Promise<void> => {
   )
   await fse.writeFile(jasmineReporterFilePath, jasmineReporterConfigBuffer.toString())
 
-  const baseTestFilePath: string = path.join(process.cwd(), 'src', 'tests')
+  const baseTestFilePath: string = path.join(process.cwd(), 'src', 'tests', 'index.spec.ts')
   const baseTestConfigBuffer: Buffer = await fse.readFile(
     path.join(configFolderPath, 'index.spec.ts')
   )
