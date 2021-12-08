@@ -1,6 +1,6 @@
 {
   "name": "ud-web-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
