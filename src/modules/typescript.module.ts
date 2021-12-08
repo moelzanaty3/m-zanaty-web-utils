@@ -7,13 +7,13 @@ import constants from '../constants'
 
 const { blue, bold, cyan } = chalk
 
-interface UpdateConfigInterface {
-  allowSyntheticDefaultImports: boolean
-  lib: string[]
-  module: string
-  moduleResolution: string
-  target: string
-}
+// interface UpdateConfigInterface {
+//   allowSyntheticDefaultImports: boolean
+//   lib: string[]
+//   module: string
+//   moduleResolution: string
+//   target: string
+// }
 
 const createTypeScriptConfiguration = async (framework: string) => {
   console.info(
