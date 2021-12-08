@@ -11,7 +11,7 @@ const createPrettierFile = async (): Promise<void> => {
     cyan(
       `Sir, ${blue(
         bold(`${constants.username}`)
-      )}... 🙋🏻 FYI to use prerttier, I will install prettier package for you... so relax and 🤌🏻`
+      )}... 🙋🏻 FYI to use prerttier, I will need to install prettier package for you... so relax and 🤌🏻`
     )
   )
   // path of the tsconfig in your project
