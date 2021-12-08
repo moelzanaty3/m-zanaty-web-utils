@@ -14,11 +14,12 @@ const createIndexFile = async (): Promise<void> => {
   await fse.mkdirSync('src')
   // Create Server Init
   const index: string = path.join(process.cwd(), 'src', 'index.ts')
-
+  const dotenvFile: string = path.join(process.cwd(), '.env')
   // write starter code
   const configFolderPath = path.join(constants.appRoot, 'config')
   const startCodeBuffer: Buffer = await fse.readFile(path.join(configFolderPath, 'start-ts.ts'))
   await fse.writeFile(index, startCodeBuffer.toString())
+  await fse.writeFile(dotenvFile, 'PORT=3000')
   // install needed packages
   await execSync('npm init -y')
   await execSync('npm install express@^4.17.1 morgan@^1.10.0 dotenv@^10.0.0')
