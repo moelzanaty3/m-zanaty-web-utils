@@ -15,7 +15,7 @@ interface UpdateConfigInterface {
   target: string
 }
 
-const createTypeScriptFile = async (framework: string) => {
+const createTypeScriptConfiguration = async (framework: string) => {
   console.info(
     cyan(
       `Sir, ${blue(
@@ -75,4 +75,4 @@ const createTypeScriptFile = async (framework: string) => {
   )
 }
 
-export default createTypeScriptFile
+export default createTypeScriptConfiguration
