@@ -8,6 +8,7 @@ import createTypeScriptFile from './modules/typescript.module'
 import createPrettierFile from './modules/prettier.module'
 import createEslintConfiguration from './modules/eslint.module'
 import createCombo from './modules/node-ts-combo.module'
+import createJasmineConfiguration from './modules/testing-jasmine.module'
 
 // eslint-disable-next-line import/newline-after-import
 const run = async () => {
@@ -27,9 +28,14 @@ const run = async () => {
   console.log(`- .... ${red('😡😡😡😡')}, no Younes`)
   console.log(`- no problem Sir, tell me how can I help you`)
   try {
-    const { isCombo, isUsingPrettier, isUsingTypeScript, framework, isUsingEslint } = await prompt(
-      questions
-    )
+    const {
+      isCombo,
+      isUsingPrettier,
+      isUsingTypeScript,
+      framework,
+      isUsingEslint,
+      isUsingJasmine
+    } = await prompt(questions)
     if (isCombo) {
       await createCombo()
     } else {
@@ -41,6 +47,9 @@ const run = async () => {
       }
       if (isUsingEslint) {
         await createEslintConfiguration(framework as string)
+      }
+      if (isUsingJasmine) {
+        await createJasmineConfiguration()
       }
       if (!isUsingTypeScript && !isUsingPrettier && !isUsingEslint) {
         console.log(red(`Sir, ${blue(bold(`${constants.username}`))}...I wish to help you 😂💔 `))

@@ -9,6 +9,7 @@ interface Answer {
   isUsingEslint?: string
   framework?: string
   isCombo?: string
+  isUsingJasmine?: string
 }
 
 const questions = [
@@ -45,6 +46,12 @@ const questions = [
     message: `${bold('Sir')}, ${green('Pick the framework to generate tsconfig.json for you: ⁉️')}`,
     name: 'framework',
     choices: ['react', 'node', 'nextjs'],
+    when: (answers: Answer) => answers.isUsingTypeScript
+  },
+  {
+    type: 'confirm',
+    message: `${bold('Sir')}, ${green('Do you need jasmine for testing configuration ⁉️')}`,
+    name: 'isUsingJasmine',
     when: (answers: Answer) => answers.isUsingTypeScript
   },
   {
