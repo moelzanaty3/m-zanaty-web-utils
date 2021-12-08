@@ -4,7 +4,7 @@
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
-  "types": "dist/index.d.ts",
+  "types": "build/index.d.ts",
   "scripts": {
     "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
     "copy:ts": "copyfiles -f src/**/*.json build/config",
@@ -14,7 +14,8 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "prepare": "husky install",
-    "format:quick": "pretty-quick --staged"
+    "format:quick": "pretty-quick --staged",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "mohammed elzanaty start config",
