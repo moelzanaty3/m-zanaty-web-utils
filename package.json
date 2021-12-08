@@ -7,7 +7,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
-    "copy:ts": "copyfiles -f src/**/*.json build/config",
+    "copy:ts": "copyfiles -f src/config/** build/config",
     "clean": "rimraf build",
     "build": "yarn clean && yarn copy:ts && npx tsc",
     "start:prod": "yarn build && node build/index.js",
