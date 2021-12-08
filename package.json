@@ -1,6 +1,6 @@
 {
   "name": "m-zanaty-web-utils",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
