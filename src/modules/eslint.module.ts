@@ -25,7 +25,7 @@ const createEslintConfiguration = async (framework: string) => {
     const eslintjs: string = path.join(process.cwd(), '.eslintrc.js')
     const configFolderPath = path.join(constants.appRoot, 'config')
     const eslintConfigBuffer: Buffer = await fse.readFile(
-      path.join(configFolderPath, '.eslintrc.js')
+      path.join(configFolderPath, 'eslintrc.js')
     )
     await fse.writeFile(eslintjs, eslintConfigBuffer.toString())
   }

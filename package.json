@@ -1,6 +1,6 @@
 {
   "name": "m-zanaty-web-utils",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
   "main": "build/index.js",
   "bin": "build/index.js",
@@ -15,7 +15,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "prepare": "husky install",
     "format:quick": "pretty-quick --staged",
-    "publish": "yarn build && npm publish"
+    "publish": "npm publish"
   },
   "keywords": [
     "mohammed elzanaty start config",
