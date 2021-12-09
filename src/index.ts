@@ -51,7 +51,7 @@ const run = async () => {
       if (isUsingJasmine) {
         await createJasmineConfiguration()
       }
-      if (!isUsingTypeScript && !isUsingPrettier && !isUsingEslint) {
+      if (!isUsingTypeScript && !isUsingPrettier && !isUsingEslint && !isUsingJasmine) {
         console.log(red(`Sir, ${blue(bold(`${constants.username}`))}...I wish to help you 😂💔 `))
       }
     }

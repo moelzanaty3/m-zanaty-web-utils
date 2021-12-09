@@ -52,7 +52,7 @@ const questions = [
     type: 'confirm',
     message: `${bold('Sir')}, ${green('Do you need jasmine for testing configuration ⁉️')}`,
     name: 'isUsingJasmine',
-    when: (answers: Answer) => answers.isUsingTypeScript
+    when: (answers: Answer) => !answers.isCombo
   },
   {
     type: 'confirm',
