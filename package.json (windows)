@@ -1,0 +1,63 @@
+{
+  "name": "m-zanaty-web-utils",
+  "version": "0.0.15",
+  "description": "Quickly create an opinionated configuration for different projects [React, Node] with.{out} typescript",
+  "main": "build/index.js",
+  "bin": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "start": "nodemon --watch ./**/*.ts --exec ts-node ./src/index.ts",
+    "copy:ts": "copyfiles -f src/config/** build/config",
+    "clean": "rimraf build",
+    "build": "yarn clean && yarn copy:ts && npx tsc",
+    "start:prod": "yarn build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write src/**/*.{ts,tsx,js,jsx}",
+    "prepare": "husky install",
+    "format:quick": "pretty-quick --staged",
+    "publish": "npm publish"
+  },
+  "keywords": [
+    "mohammed elzanaty start config",
+    "react",
+    "nodejs",
+    "typescript",
+    "ts"
+  ],
+  "author": "Mohammed Elzanaty",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedelzanaty/m-zanaty-web-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/mohammedelzanaty/m-zanaty-web-utils/issues"
+  },
+  "homepage": "https://github.com/mohammedelzanaty/m-zanaty-web-utils#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^8.1.3",
+    "@types/node": "^16.11.12",
+    "@types/nodemon": "^1.19.1",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
