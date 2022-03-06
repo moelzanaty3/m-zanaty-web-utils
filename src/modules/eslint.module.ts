@@ -20,7 +20,7 @@ const createEslintConfiguration = async (framework: string) => {
 
   if (framework === 'node') {
     await execSync(
-      'npm install --save-dev eslint@^8.4.1 eslint-config-prettier@^8.3.0 eslint-plugin-prettier@^4.0.0 eslint-config-airbnb-base@^15.0.0 eslint-plugin-import@^2.25.3 @typescript-eslint/eslint-plugin@^5.6.0 @typescript-eslint/parser@^5.6.0'
+      'npm install --save-dev eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser'
     )
     const eslintjs: string = path.join(process.cwd(), '.eslintrc.js')
     const configFolderPath = path.join(constants.appRoot, 'config')
