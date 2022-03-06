@@ -11,7 +11,7 @@ import createCombo from './modules/node-ts-combo.module'
 import createJasmineConfiguration from './modules/testing-jasmine.module'
 
 const run = async () => {
-  const { blue, bold, green, white, bgRedBright } = chalk
+  const { blue, bold, red, green, white, bgRedBright } = chalk
 
   console.log(
     `- Hey Sir, ${blue(bold(`${constants.username}`))}... here's ${green(
