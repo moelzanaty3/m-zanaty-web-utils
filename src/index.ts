@@ -10,7 +10,6 @@ import createEslintConfiguration from './modules/eslint.module'
 import createCombo from './modules/node-ts-combo.module'
 import createJasmineConfiguration from './modules/testing-jasmine.module'
 
-// eslint-disable-next-line import/newline-after-import
 const run = async () => {
   const { blue, bold, green, white, bgRedBright } = chalk
 
@@ -19,7 +18,7 @@ const run = async () => {
       'Younes'
     )} How can I serve you? 👨🏻‍💻`
   )
-  console.log(bgRedBright(white('make sure u use npm version > v6.x')))
+  console.log(bgRedBright(white('Please, make sure u use npm version > v6.x')))
 
   // console.log(
   //   `- Sir, Sorry but ${bold(
