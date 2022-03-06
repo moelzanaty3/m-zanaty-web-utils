@@ -12,21 +12,24 @@ import createJasmineConfiguration from './modules/testing-jasmine.module'
 
 // eslint-disable-next-line import/newline-after-import
 const run = async () => {
-  const { blue, bold, green, red } = chalk
+  const { blue, bold, green, white, bgRedBright } = chalk
+
   console.log(
     `- Hey Sir, ${blue(bold(`${constants.username}`))}... here's ${green(
       'Younes'
     )} How can I serve you? 👨🏻‍💻`
   )
-  console.log(
-    `- Sir, Sorry but ${bold(
-      `Do not you think, it's a suitable time to stop ${green.italic(
-        'being lazy'
-      )} and ${green.italic('never use me again ?!!')}`
-    )} 🤔🤨 `
-  )
-  console.log(`- .... ${red('😡😡😡😡')}, no Younes`)
-  console.log(`- no problem Sir, tell me how can I help you`)
+  console.log(bgRedBright(white('make sure u use npm version > v6.x')))
+
+  // console.log(
+  //   `- Sir, Sorry but ${bold(
+  //     `Do not you think, it's a suitable time to stop ${green.italic(
+  //       'being lazy'
+  //     )} and ${green.italic('never use me again ?!!')}`
+  //   )} 🤔🤨 `
+  // )
+  // console.log(`- .... ${red('😡😡😡😡')}, no Younes`)
+  // console.log(`- no problem Sir, tell me how can I help you`)
   try {
     const {
       isCombo,
@@ -58,9 +61,7 @@ const run = async () => {
   } catch (error) {
     console.log(
       red(
-        `Whoops!, Sir, ${blue(bold(`${constants.username}`))}... 😂💔 but ${
-          (error as Error).message
-        }`
+        `Whoops!, Sir, ${blue(bold(`${constants.username}`))}... 😂💔 but ${(error as Error).stack}`
       )
     )
   }
